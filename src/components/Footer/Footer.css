@@ -1,0 +1,118 @@
+.footer {
+  background-color: black; 
+  padding: 40px 0;
+  margin-top: 64px;
+  color: white; /* Tambahkan warna teks default */
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 120px; 
+}
+
+.footer-content {
+  flex: 1;
+  max-width: 380px;
+}
+
+
+.footer-content:first-child {
+  flex: 2; 
+  max-width: 500px; 
+}
+
+.footer h3 {
+  font-family: "Bebas Neue";
+  font-size: 20px;
+  color: #37B7C3;
+  letter-spacing: 0.15em;
+  margin-bottom: 15px;
+}
+
+.footer p {
+  font-family: "Poppins";
+  font-size: 16px;
+  color: white;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+.footer a {
+  font-family: "Poppins";
+  font-size: 16px;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block; 
+}
+
+.footer a:hover {
+  color: #37B7C3;
+}
+
+.logo {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.footer-copyright {
+  margin-top: 40px;
+  text-align: center;
+  font-family: "Poppins";
+  font-size: 14px;
+  color: #888;
+}
+
+.line{
+    margin-top: 32px;
+}
+
+
+@media (max-width: 900px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 30px; 
+  }
+
+  .footer-content:first-child {
+    flex: unset;
+    max-width: 100%;
+  }
+
+  .footer-content {
+    max-width: 100%;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 30px 15px;
+  }
+
+  .footer h3 {
+    font-size: 18px;
+  }
+
+  .footer p,
+  .footer a {
+    font-size: 14px;
+  }
+
+  .logo {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+  }
+}

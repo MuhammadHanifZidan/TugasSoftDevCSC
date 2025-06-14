@@ -1,0 +1,116 @@
+/* CSS yang diperbaiki */
+.line{
+  margin-bottom: 32px;
+}
+
+.title {
+  opacity: 1;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+p {
+  font-family: "Poppins";
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  text-align: justify;
+  height: auto;
+  margin: 0; 
+}
+
+h2 {
+  font-family: "Bebas Neue";
+  font-size: 50px;
+  color: white;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 50px; 
+  height: 50px; 
+  object-fit: cover; 
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: center; 
+}
+
+.test {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 0 20px; 
+}
+
+.test-sec {
+  display: flex;
+  flex-direction: column;
+  width: 380px; 
+  height: auto; 
+  background-color: rgba(0, 0, 0, 0.25); 
+  border-radius: 12px; 
+  padding: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); 
+  justify-content: space-between; 
+  row-gap: 32px;
+  opacity: 1;
+}
+
+.img {
+  display: flex;
+  gap: 5px;
+  justify-content: center; 
+  padding: 10px 0; 
+}
+
+.test-sec:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.7);
+}
+
+.test-container {
+  display: flex;
+  gap: 20px; 
+  justify-content: center;
+  padding: 0;
+  flex-wrap: wrap; 
+}
+
+
+.testimonial {
+  opacity: 0;
+  animation: fadeIn 1s ease forwards;
+  animation-delay: 0.5s;
+}
+
+.wrapper {
+  overflow: visible;
+}
+
+@media (max-width: 980px){
+  .test-container{
+    flex-direction: column;
+    column-gap: 0;
+    align-items: center;
+  }
+  .test-sec{
+    width: 580px;
+    height: 580px;
+  }
+  .test-sec p{
+    font-size: 24px;
+  }
+  .profile img{
+    width: 100px;
+    height: 100px;
+  }
+}

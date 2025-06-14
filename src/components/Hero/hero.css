@@ -1,0 +1,97 @@
+.header {
+    display: flex;
+    min-height: 100vh;
+    background: linear-gradient(
+        rgba(0, 0, 0, 0.3),
+        rgba(0, 0, 0, 0.3)
+    ), url("../../assets/Landing.png") center/cover;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+.header h1 {
+    color: white;
+    font-size: 108px;
+    font-family: "montserrat";
+    text-align: center;
+    margin-top: -32px;
+    margin-bottom: 107px;
+    width: auto;
+    white-space: nowrap;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.8s;
+}
+
+h2{
+    font-family: "Bebas Neue";
+    font-size: 50px;
+    color: white;
+    font-weight: 400;
+}
+
+h3{
+    font-family: "Bebas Neue";
+    font-size: 20px;
+    color: white;
+    letter-spacing: 15%;
+}
+
+p{
+    font-family: "Poppins";
+    font-size: 16px;
+    color: white;
+    text-align: justify;
+}
+
+.sub-title {
+    font-family: "Bebas Neue";
+    font-size: 34px;
+    text-align: center;
+    letter-spacing: normal;
+    font-weight: lighter;
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.header .wrapper .cta {
+  position: relative;
+  font-family: "Bebas Neue";
+  font-size: 35px;
+  padding: 10px 75px;
+  color: white;
+  background:#37B7C3;
+  border: 5px solid transparent;
+  border-radius: 32px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  box-sizing: border-box;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+  animation-delay: 1.5s;
+}
+
+.header .wrapper .cta:hover {
+  background:
+    linear-gradient(to right, #088395, #071952) border-box,
+    rgba(0, 0, 0, 0.46) padding-box;
+  transform: scale(1.05);
+}
+
+@media (max-width: 1200px){
+  .header h1{
+    white-space: pre-line;
+  }
+}
+
