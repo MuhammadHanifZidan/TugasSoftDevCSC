@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./testimonial.css";
-import { Line, Star} from '../../assets';
+import { Line, Star } from '../../assets';
 import { db } from '../../Firebase';
 import { collection, getDocs } from 'firebase/firestore';
 

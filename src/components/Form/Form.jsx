@@ -23,7 +23,6 @@ const Form = () => {
   const [userTestimonial, setUserTestimonial] = useState(null);
   const [editing, setEditing] = useState(false);
 
-  // Check login
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, user => {
       if (user) {
@@ -36,7 +35,6 @@ const Form = () => {
     return unsubscribe;
   }, []);
 
-  // Load testimonial for logged-in user
   useEffect(() => {
     if (!currentUser) return;
     const fetchUserTestimonial = async () => {
@@ -129,17 +127,15 @@ const Form = () => {
                   type="button"
                   key={star}
                   className="star-button"
-                  onMouseEnter={() => editing && setHoverRating(star)}
-                  onMouseLeave={() => editing && setHoverRating(0)}
-                  onClick={() => editing && setRating(star)}
-                  disabled={!editing && userTestimonial}
+                  onMouseEnter={() => setHoverRating(star)}
+                  onMouseLeave={() => setHoverRating(0)}
+                  onClick={() => setRating(star)}
                 >
                   <Star filled={star <= (hoverRating || rating)} />
                 </button>
               ))}
             </div>
           </div>
-
           {(editing || !userTestimonial) && (
             <button type="submit" className="submit-button">
               {editing ? "Save Changes" : "Submit"}

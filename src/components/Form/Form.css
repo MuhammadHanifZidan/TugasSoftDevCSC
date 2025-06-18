@@ -80,14 +80,9 @@
 .star-icon {
   width: 36px;
   height: 36px;
-  fill: grey; 
-  transition: fill 0.3s ease;
   cursor: pointer;
 }
 
-.star-icon.filled {
-  fill: #088395; 
-}
 
 .submit-button {
   background-color: #37B7C3; 
