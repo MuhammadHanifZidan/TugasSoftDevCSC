@@ -6,6 +6,7 @@
 }
 
 .auth-form {
+  transform: scale(1.5);
   background-color: rgba(0, 0, 50, 0.5);
   padding: 40px;
   border-radius: 12px;

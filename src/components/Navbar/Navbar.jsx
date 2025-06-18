@@ -44,8 +44,8 @@ const Navbar = () => {
             </div>
           ) : (
             <>
-              <Link to="/sign_in" className="auth-btn solid" onClick={() => setMenuOpen(false)}>Sign In</Link>
-              <Link to="/sign_up" className="auth-btn outline" onClick={() => setMenuOpen(false)}>Sign Up</Link>
+              <Link to="/sign_in" className="btn-sign-in" onClick={() => setMenuOpen(false)}>Sign In</Link>
+              <Link to="/sign_up" className="btn-sign-up" onClick={() => setMenuOpen(false)}>Sign Up</Link>
             </>
           )}
         </div>
