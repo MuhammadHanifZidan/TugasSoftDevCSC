@@ -27,7 +27,14 @@
   border-radius: 10px;
   cursor: pointer;
   opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
   animation: fadeIn 0.6s ease forwards;
+}
+
+.gallery-container img.loaded {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .gallery-container img:hover {

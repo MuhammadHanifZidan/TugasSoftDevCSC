@@ -1,37 +1,50 @@
-import React, { useState } from 'react'
-import {
-  Image6, Image7, Image8, Image9,
-  Image10, Image11, Image13,
-  image14
-} from '../../assets'
-import './Gallery.css'
+import React, { useEffect, useState } from 'react';
+import { collection, getDocs } from 'firebase/firestore';
+import { db } from '../../Firebase'; // pastikan path-nya benar
+import './Gallery.css';
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState(null)
-  const [isZoomed, setIsZoomed] = useState(false)
+  const [images, setImages] = useState([]);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [isZoomed, setIsZoomed] = useState(false);
+
+  // Fetch image URLs from Firestore
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, 'images'));
+        const urls = querySnapshot.docs.map(doc => doc.data().imageUrl);
+        setImages(urls);
+      } catch (error) {
+        console.error('❌ Error fetching images from Firestore:', error);
+      }
+    };
+
+    fetchImages();
+  }, []);
 
   const openLightbox = (imgSrc) => {
-    setSelectedImage(imgSrc)
-    setIsZoomed(false) 
-  }
+    setSelectedImage(imgSrc);
+    setIsZoomed(false);
+  };
 
   const closeLightbox = () => {
-    setSelectedImage(null)
-    setIsZoomed(false)
-  }
+    setSelectedImage(null);
+    setIsZoomed(false);
+  };
 
   const toggleZoom = (e) => {
-    e.stopPropagation() 
-    setIsZoomed(!isZoomed)
-  }
+    e.stopPropagation();
+    setIsZoomed(!isZoomed);
+  };
 
   return (
     <div className="gallery-wrapper">
       <h1 className="gallery-title">GALLERY</h1>
 
       <div className="gallery-container">
-        {[Image6, Image8, Image7, Image9, Image10, Image11, Image13, image14].map((img, idx) => (
-          <img key={idx} src={img} alt="gallery" onClick={() => openLightbox(img)} />
+        {images.map((img, idx) => (
+          <img key={idx} src={img} alt={`gallery-${idx}`} onClick={() => openLightbox(img)} />
         ))}
       </div>
 
@@ -46,7 +59,7 @@ const Gallery = () => {
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default Gallery
+export default Gallery;

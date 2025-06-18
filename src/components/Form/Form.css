@@ -133,5 +133,31 @@
   animation: fadeIn 0.6s ease forwards;
 }
 
+.testimonial-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.edit-button,
+.delete-button {
+  padding: 6px 14px;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
+  background-color: #37B7C3;
+  color: white;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-button {
+  background-color: #d9534f;
+}
+
+.edit-button:hover,
+.delete-button:hover {
+  opacity: 0.9;
+}
 
 

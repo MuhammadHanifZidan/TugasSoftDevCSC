@@ -6,6 +6,9 @@ import Topic from "./Topic/Topic";
 import Facility from './Facility/Facility';
 import Information from './Information/Information';
 import Form from './Form/Form';
-import Gallery from './Gallery/Gallery'
+import Gallery from './Gallery/AdminGallery';
+import AdminGallery from "./Gallery/AdminGallery";
+import SignIn from "./Auth/SignIn";
+import SignUp from "./Auth/SignUp";
 
-export {Navbar,Footer,Hero,Testimonial,Topic, Facility, Information, Form, Gallery}
+export {Navbar,Footer,Hero,Testimonial,Topic, Facility, Information, Form, Gallery, AdminGallery, SignIn, SignUp}

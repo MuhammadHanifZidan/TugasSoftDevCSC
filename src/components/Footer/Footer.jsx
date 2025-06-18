@@ -4,7 +4,7 @@ import {Line} from '../../assets'
 const footer = () => {
   return (
     <footer className='footer'>
-      <div className="wrapper">
+      <div className="footer-wrapper">
         <div className="footer-container">
           <div className="footer-content">
             <h3 className='logo'>LEUWIHEJO.COM</h3>

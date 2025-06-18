@@ -1,26 +1,25 @@
-/* navbar.css */
+/* Navbar styles */
 nav {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    top: 0;
-    background: linear-gradient(to bottom, 
-        rgba(0, 0, 0, 1) 0%, 
-        rgba(0, 0, 0, 1) 50%, 
-        rgba(0, 0, 0, 0) 100%
-    );
-    z-index: 300;
-    display: flex;
-    justify-content: center; 
-    padding: 0px 0px 20px 0px;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 1) 50%,
+      rgba(0, 0, 0, 0) 100%);
+  z-index: 300;
+  display: flex;
+  justify-content: center;
+  padding: 0px 0px 20px 0px;
 }
 
 nav .nav-content {
-    width: 100%;
-    max-width: 1180px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
+  width: 100%;
+  max-width: 1180px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
 }
 
 .logo {
@@ -37,24 +36,68 @@ nav .nav-content {
 }
 
 nav ul {
-    display: flex;
-    list-style: none;
-    gap: 90px;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 90px;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li a {
-    color: white;
-    font-family: "Bebas Neue";
-    font-size: 20px;
-    letter-spacing: 0.15em;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: white;
+  font-family: "Bebas Neue";
+  font-size: 20px;
+  letter-spacing: 0.15em;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #37B7C3;
+  color: #37B7C3;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.btn-sign-in {
+  background-color: #1799a8;
+  color: white;
+  padding: 8px 16px 5px 16px;
+  border-radius: 8px;
+  font-family: 'Bebas Neue';
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-sign-in:hover {
+  background-color: #0f7c89;
+}
+
+.btn-sign-up {
+  background: transparent;
+  padding: 5px 16px 5px 16px;
+  border-radius: 8px;
+  font-family: 'Bebas Neue';
+  font-size: 20px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  color: white;
+  border: 2px solid transparent;
+  background-image: linear-gradient(black, black),
+    linear-gradient(to right, #1799a8, #3a85ff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-sign-up:hover {
+  color: #37B7C3;
+  border-image: linear-gradient(to right, #1799a8, #3a85ff) 1;
 }
 
 .hamburger {
@@ -62,7 +105,7 @@ nav ul li a:hover {
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
-  margin-left: auto;
+  margin-left: 20px;
 }
 
 .hamburger div {
@@ -73,7 +116,7 @@ nav ul li a:hover {
   transition: all 0.3s ease;
 }
 
-
+/* Responsive */
 @media (max-width: 1180px) {
   nav .nav-content {
     padding: 0 15px;
@@ -86,13 +129,12 @@ nav ul li a:hover {
 
   nav ul {
     position: fixed;
-    top: 48px; /* tinggi nav */
+    top: 48px;
     right: 0;
-    background: linear-gradient(to left, 
-        rgba(0, 0, 0, 1) 0%, 
-        rgba(0, 0, 0, 1) 70%, 
-        rgba(0, 0, 0, 0) 100%
-    );
+    background: linear-gradient(to left,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 1) 70%,
+        rgba(0, 0, 0, 0) 100%);
     flex-direction: column;
     width: 200px;
     height: calc(100vh - 60px);
@@ -115,4 +157,59 @@ nav ul li a:hover {
   .hamburger {
     display: flex;
   }
+
+  .auth-buttons {
+    margin-left: auto;
+    display: flex;
+    gap: 10px;
+  }
+}
+
+.auth-btn {
+  padding: 8px 16px;
+  font-family: 'Bebas Neue';
+  font-size: 16px;
+  border-radius: 8px;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.auth-btn.solid {
+  background-color: #159fab;
+  color: white;
+  border: none;
+}
+
+.auth-btn.solid:hover {
+  background-color: #10838d;
+}
+
+.auth-btn.outline {
+  border: 2px solid #159fab;
+  color: white;
+  background-color: transparent;
+}
+
+.auth-btn.outline:hover {
+  background-color: #159fab;
+}
+
+.auth-btn.logout {
+  background-color: transparent;
+  border: 2px solid red;
+  color: red;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-name {
+  color: white;
+  font-family: 'Poppins';
+  font-size: 14px;
 }

@@ -9,9 +9,9 @@
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-p {
+.test-sec p {
   font-family: "Poppins";
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
   color: white;
   text-align: justify;
@@ -29,18 +29,8 @@ h2 {
   text-align: center;
 }
 
-.profile img {
-  border-radius: 50%;
-  width: 50px; 
-  height: 50px; 
-  object-fit: cover; 
-}
-
-.profile {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  align-items: center; 
+.name p{
+  font-weight: bolder;
 }
 
 .test {
@@ -53,8 +43,8 @@ h2 {
 .test-sec {
   display: flex;
   flex-direction: column;
-  width: 380px; 
-  height: auto; 
+  width: 370px; 
+  height: 300px; 
   background-color: rgba(0, 0, 0, 0.25); 
   border-radius: 12px; 
   padding: 20px; 
@@ -62,13 +52,8 @@ h2 {
   justify-content: space-between; 
   row-gap: 32px;
   opacity: 1;
-}
-
-.img {
-  display: flex;
-  gap: 5px;
-  justify-content: center; 
-  padding: 10px 0; 
+  overflow: auto;
+  align-items: center;
 }
 
 .test-sec:hover {
@@ -108,9 +93,5 @@ h2 {
   }
   .test-sec p{
     font-size: 24px;
-  }
-  .profile img{
-    width: 100px;
-    height: 100px;
   }
 }

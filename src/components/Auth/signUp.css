@@ -1,0 +1,15 @@
+@import './signIn.css'; /* Gunakan style dasar yang sama */
+
+.auth-form h2 {
+  font-family: 'Bebas Neue';
+  font-size: 24px;
+  letter-spacing: 0.15em;
+  margin-bottom: 10px;
+}
+
+.auth-form p {
+  font-family: 'Poppins';
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #ccc;
+}

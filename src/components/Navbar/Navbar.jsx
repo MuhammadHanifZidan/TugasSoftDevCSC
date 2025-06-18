@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
-import "./navbar.css";
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../../Firebase';
+import { onAuthStateChanged, signOut } from 'firebase/auth';
+import './navbar.css';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [currentUser, setCurrentUser] = useState(null);
+  const navigate = useNavigate();
 
-  const toggleMenu = () => {
-    setMenuOpen(prev => !prev);
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, user => {
+      setCurrentUser(user);
+    });
+    return () => unsubscribe();
+  }, []);
+
+  const toggleMenu = () => setMenuOpen(prev => !prev);
+
+  const handleLogout = async () => {
+    await signOut(auth);
+    setCurrentUser(null);
+    navigate('/');
   };
 
   return (
@@ -21,14 +36,26 @@ const Navbar = () => {
           <li><Link to="/testimonial" onClick={() => setMenuOpen(false)}>Testimonials</Link></li>
         </ul>
 
-        <div className="hamburger" onClick={toggleMenu} aria-label="Toggle menu" role="button" tabIndex={0}>
-          <div></div>
-          <div></div>
-          <div></div>
+        <div className="auth-buttons">
+          {currentUser ? (
+            <div className="user-info">
+              <span className="user-name">{currentUser.displayName}</span>
+              <button className="auth-btn logout" onClick={handleLogout}>Logout</button>
+            </div>
+          ) : (
+            <>
+              <Link to="/sign_in" className="auth-btn solid" onClick={() => setMenuOpen(false)}>Sign In</Link>
+              <Link to="/sign_up" className="auth-btn outline" onClick={() => setMenuOpen(false)}>Sign Up</Link>
+            </>
+          )}
+        </div>
+
+        <div className="hamburger" onClick={toggleMenu} role="button" tabIndex={0}>
+          <div></div><div></div><div></div>
         </div>
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import "./testimonial.css";
-import { Line, Star, pp1 } from '../../assets';
+import { Line, Star} from '../../assets';
 import { db } from '../../Firebase';
 import { collection, getDocs } from 'firebase/firestore';
 
@@ -45,8 +45,7 @@ const Testimonial = () => {
                 <div className="test">
                   <p style={{ fontWeight: 400 }}>"{item.testimonial}"</p>
                 </div>
-                <div className="profile">
-                  <img src={pp1} alt={`${item.name} profile`} />
+                <div className="name">
                   <p>- {item.name}</p>
                 </div>
               </div>
