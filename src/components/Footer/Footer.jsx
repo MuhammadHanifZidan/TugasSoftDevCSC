@@ -8,7 +8,7 @@ const footer = () => {
         <div className="footer-container">
           <div className="footer-content">
             <h3 className='logo'>LEUWIHEJO.COM</h3>
-            <p style={{fontWeight: 400}}>Created by Muhammad Hanif Zidan and Hanif Zakran Effendi for the second major assignment in basic web programming.</p>
+            <p style={{fontWeight: 400}}>Created by Muhammad Hanif Zidan for the CSC final project of software development division.</p>
           </div>
           <div className="footer-content">
             <h3 >Contact Us</h3>
